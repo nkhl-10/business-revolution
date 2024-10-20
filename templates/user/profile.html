@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Profile, Profile">
+    <meta name="description" content="">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{% static 'user/nicepage.css'%}" media="screen">
+    <link rel="stylesheet" href="{% static 'user/Contact.css'%}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'user/jquery.js'%}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'user/nicepage.js'%}" defer=""></script>
+    <meta name="generator" content="Nicepage 5.2.4, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|PT+Sans+Caption:400,700">
+
+
+    <script type="application/ld+json">{
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": ""
+    }</script>
+    <meta name="theme-color" content="#95ccc3">
+    <meta property="og:title" content="Contact">
+    <meta property="og:type" content="website">
+</head>
+<body class="u-body u-xl-mode" data-lang="en">
+<section class="u-align-center u-clearfix u-image u-section-1" id="carousel_fc0b" data-image-width="1980"
+         data-image-height="1320">
+    <div class="u-clearfix u-sheet u-valign-bottom-sm u-sheet-1">
+        <h2 class="u-text u-text-1">Profile</h2>
+        <div class="u-clearfix u-expanded-width u-gutter-100 u-layout-wrap u-layout-wrap-1">
+            <div class="u-gutter-0 u-layout">
+                <div class="u-layout-row">
+                    <div class="u-align-left u-container-style u-layout-cell u-size-31 u-layout-cell-1">
+                        <div class="u-container-layout u-container-layout-1">
+                            <div class="u-expanded-width u-form u-form-1">
+                                <form action="profile" method="post" style="padding: 10px;">
+                                    {% csrf_token %}
+                                    <div class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form">
+                                        <div class="u-form-group u-form-name">
+                                            <label for="name-2145" class="u-label">Name</label>
+                                            <input type="text" id="name-2145" value="{{re.uname}}"
+                                                   name="uname"
+                                                   class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                                   required="">
+                                        </div>
+                                        <div class="u-form-email u-form-group">
+                                            <label for="email-2145" class="u-label">Email</label>
+                                            <input type="email" id="email-2145" value="{{re.email}}"
+                                                   name="email"
+                                                   class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                                   required="">
+                                        </div>
+                                        <div class="u-form-group u-form-group-3">
+                                            <label for="text-b641" class="u-label">Phone</label>
+                                            <input type="text" id="text-b641" value="{{re.phonenumber}}"
+                                                   name="phonenumber"
+                                                   class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                                   required="required">
+                                        </div>
+                                        <div class="u-form-group u-form-group-4">
+                                            <label for="text-37e0" class="u-label">password</label>
+                                            <input type="password" id="text-37e0" name="password"
+                                                   value="{{re.password}}"
+                                                   class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                                   maxlength="12">
+                                        </div>
+                                        <a href="password" style= "width:460px;  text-align:right;; ">Forgot password</a>
+                                        <div class="u-align-left u-form-group u-form-submit">
+                                            <button class="u-active-palette-4-light-2 u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-hover-black u-btn-1">
+                                                Edit
+                                                Profile<br>
+                                            </button>&nbsp;
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="u-align-center u-container-style u-custom-color-1 u-layout-cell u-size-29 u-layout-cell-2">
+                        <div class="u-container-layout u-valign-bottom-lg u-container-layout-2">
+                            <img class="u-image u-image-circle u-preserve-proportions u-image-1"
+                                 src="{% static 'user/img/3.jpg'%}" alt="" data-image-width="405"
+                                 data-image-height="405">
+                            <h3 class="u-custom-font u-text u-text-default u-text-2"> Hello, I'm
+                                {{re.uname}}</h3>
+                            <a href="home"
+                               class="u-btn u-btn-round u-button-style u-hover-black u-hover-feature u-palette-5-light-3 u-radius-18 u-text-grey-90 u-text-hover-white u-btn-2"
+                               data-animation-name="customAnimationIn" data-animation-duration="1000">Home</a>
+                            <a href="profile"
+                               class="u-border-none u-btn u-btn-round u-button-style u-hover-black u-hover-feature u-palette-5-light-3 u-radius-18 u-text-grey-90 u-text-hover-white u-btn-3">Profile</a>
+                            <a href="order"
+                               class="u-border-none u-btn u-btn-round u-button-style u-hover-black u-hover-feature u-palette-5-light-3 u-radius-18 u-text-grey-90 u-text-hover-white u-btn-4">My
+                                Order</a>
+                            <a href="logout"
+                               class="u-border-none u-btn u-btn-round u-button-style u-hover-black u-hover-feature u-palette-5-light-3 u-radius-18 u-text-grey-90 u-text-hover-white u-btn-5">LogOut</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+<!--<section class="u-backlink u-clearfix u-grey-80">-->
+<!--    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">-->
+<!--        <span>Website Templates</span>-->
+<!--    </a>-->
+<!--    <p class="u-text">-->
+<!--        <span>created with</span>-->
+<!--    </p>-->
+<!--    <a class="u-link" href="" target="_blank">-->
+<!--        <span>Website Builder Software</span>-->
+<!--    </a>.-->
+<!--</section>-->
+
+</body>
+</html>

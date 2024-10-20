@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <link rel="stylesheet" href="{%static 'user/styles.css'%}">
+    <title>signin-signup</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="signin-signup">
+        <form action="login" method="post" class="sign-in-form">
+            {% csrf_token %}
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Email" name="email">
+            </div>
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" name="password">
+            </div>
+            <input type="submit" value="Login" class="btn">
+            <p class="social-text">Or Sign in with social platform</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100092135042556&mibextid=ZbWKwL" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a target="_blank" href="https://twitter.com/businessrevolu4?t=wBvtKqtihtFnyYaKuCYbPg&s=09" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/business_revolution_rgc?igshid=YmMyMTA2M2Y=" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/business-revolution-502b71263/" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
+        </form>
+        <form action="load" method="post" class="sign-up-form">
+            {% csrf_token %}
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" name="uname" required>
+            </div>
+            <div class="input-field">
+                <i class='fas fa-phone' style="rotate: 100deg;"></i>
+                <input type="tel" placeholder="Phone No" name="phonenumber" required minlength="10" maxlength="10"
+                       class="box">
+            </div>
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" name="email" required>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" name="password" required>
+            </div>
+            <input type="submit" value="Sign up" class="btn">
+            <p class="social-text">Or Sign in with social platform</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100092135042556&mibextid=ZbWKwL" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a target="_blank" href="https://twitter.com/businessrevolu4?t=wBvtKqtihtFnyYaKuCYbPg&s=09" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/business_revolution_rgc?igshid=YmMyMTA2M2Y=" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/business-revolution-502b71263/" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
+        </form>
+    </div>
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3></h3>
+<!--                <p>The login page for Business Revolution should provide a simple and user-friendly interface for users to enter their login credentials and access their account.</p>-->
+                <button class="btn" id="sign-in-btn">Sign in</button>
+            </div>
+            <img src="{%static 'user/singin1.svg'%}" alt="" class="image">
+        </div>
+        <div class="panel right-panel">
+            <div class="content">
+<!--                <h3>New to Brand?</h3>-->
+<!--                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt minima-->
+<!--                    iure?</p>-->
+                <button class="btn" id="sign-up-btn">Sign up</button>
+            </div>
+            <img src="{%static 'user/singup.svg'%}" alt="" class="image">
+        </div>
+    </div>
+</div>
+<script src="{%static 'user/app.js'%}"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>-->
+<script>
+     alertify.set('notifier','position', 'top-right');
+     {% for msg in messages %}
+     alertify.success('{{msg}}');
+     {% endfor %}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'user/buyorder/buyorder.css'%}" rel="stylesheet">
+    <style>
+       .container {
+       background-color: rgb(36 122 190)
+
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="wrapper">
+        <div class="banner-image"><img src="{{data.idea_image.url}}" class="banner-image"></div>
+        <h1> {{data.idea_title}}</h1>
+        <p></p>
+    </div>
+    <div class="button-wrapper">
+        <form action="/order_payment" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="name" value="{{request.session.uname}}">
+            <input type="hidden" name="amount" value="{{data.price}}">
+            <button class="btn fill">₹{{data.price}}</button>
+        </form>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Business Revolution</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'innovator/img/favicon.png'%}" rel="icon">
+    <link href="{% static 'innovator/img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'innovator/vendor/aos/aos.css'%}" rel="stylesheet">
+    <link href="{% static 'innovator/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'innovator/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+    <link href="{% static 'innovator/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+    <link href="{% static 'innovator/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet">
+    <link href="{% static 'innovator/vendor/remixicon/remixicon.css'%}" rel="stylesheet">
+    <link href="{% static 'innovator/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'innovator/css/style.css'%}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- =======================================================
+    * Template Name: Arsha - v4.10.0
+    * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+
+    <style>
+     .k1 {
+      width: 100%;
+      margin-left: auto;
+      padding: 20px;
+      border-radius: 6px;
+      background: #darkblue;
+      box-shadow:inset 0px -1px 9px 11px #06a3da
+      }
+     .kishan {
+          position: absolute;
+          font-size:80px;
+          color: white;
+          z-index: 2;
+          line-height: 83px;
+
+         }
+          .testbox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: inherit;
+          padding: 89px;
+          }
+          .banner {
+          position: relative;
+          height: 500px;
+          background-image: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{% static 'user/img/carousel-1.jpg'%}");
+
+
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          }
+          .banner::after {
+          content: "";
+          background-color: rgba(0, 0, 0, 0.2);
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          }
+          input, select, textarea {
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          }
+          input {
+          width: calc(100% - 10px);
+          padding: 5px;
+          }
+                 input[type="date"] {
+          padding: 4px 5px;
+          }
+                    textarea {
+          width: calc(100% - 12px);
+          padding: 5px;
+          }
+          .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+          color: #06a3da;
+          }
+          .item input:hover, .item select:hover, .item textarea:hover {
+          border: 1px solid transparent;
+          box-shadow: 0 0 3px 0 #06a3da;
+          color: #06a3da;
+          }
+          .item {
+          position: relative;
+          margin: 10px 0;
+          }
+          .item span {
+          color: red;
+          }
+          input[type="date"]::-webkit-inner-spin-button {
+          display: none;
+          }
+          .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+          position: absolute;
+          font-size: 20px;
+          color:#06a3da;
+          }
+          .item i {
+          right: 1%;
+          top: 30px;
+          z-index: 1;
+          }
+          [type="date"]::-webkit-calendar-picker-indicator {
+          right: 1%;
+          z-index: 2;
+          opacity: 0;
+          cursor: pointer;
+          }
+          input[type=radio], input[type=checkbox]  {
+          display: none;
+          }
+          label.radio {
+          position: relative;
+          display: inline-block;
+          margin: 5px 20px 15px 0;
+          cursor: pointer;
+          }
+          .question span {
+          margin-left: 30px;
+          }
+          .question-answer label {
+          display: block;
+          }
+          label.radio:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 17px;
+          height: 17px;
+          border-radius: 50%;
+          border: 2px solid #ccc;
+          }
+          input[type=radio]:checked + label:before, label.radio:hover:before {
+          border: 2px solid #06a3da;
+          }
+          label.radio:after {
+          content: "";
+          position: absolute;
+          top: 6px;
+          left: 5px;
+          width: 8px;
+          height: 4px;
+          border: 3px solid #06a3da;
+          border-top: none;
+          border-right: none;
+          transform: rotate(-45deg);
+          opacity: 0;
+          }
+          input[type=radio]:checked + label:after {
+          opacity: 1;
+          }
+          .btn-block {
+          margin-top: 10px;
+          text-align: center;
+          }
+          button {
+          width: 150px;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background: #06a3da;
+          font-size: 16px;
+          color: #fff;
+          cursor: pointer;
+          }
+          button:hover {
+          background:#06a3da;
+          }
+          @media (min-width: 568px) {
+          .name-item, .city-item {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          }
+          .name-item input, .name-item div {
+          width: calc(50% - 20px);
+          }
+          .name-item div input {
+          width:97%;}
+          .name-item div label {
+          display:block;
+          padding-bottom:5px;
+          }
+          }
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.costum-file {
+    margin: 50px auto;
+    background-color: white;
+    color: ##06a3da;
+
+
+    z-index: 1;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.costum-file span {
+    padding: 5px 0 0 5px;
+    display: block;
+}
+
+.costum-file input[type="file"] {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.costum-file::after {
+    content: "Upload";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #06a3da;
+    color: black;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+vk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+{% include "innovator/header.html" %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+                 data-aos="fade-up" data-aos-delay="200">
+                <h1>Better Solutions For Your Business</h1>
+                <h2>We are team of talented designers making websites with Bootstrap</h2>
+                <!--                <div class="d-flex justify-content-center justify-content-lg-start">-->
+                <!--                    <a href="upload" class="btn-get-started scrollto">Get Started</a>-->
+                <!--                </div>-->
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                <img src="{% static 'innovator/img/hero-img.png'%}" class="img-fluid animated" alt="">
+            </div>
+        </div>
+    </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+    <div class="testbox">
+        <form action="upload" class="k1" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="banner">
+                <div class="row py-5">
+                    <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-4 text-white animated zoomIn">Upload Ideas</h1>
+                        <a href="" class="h5 text-white">Buisness Revolution</a>
+                        <i class="far fa-circle text-white px-2"></i>
+                        <a href="" class="h5 text-white"> Upload Ideas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <label for="name">Publisher Name <span>*</span></label>
+                <input id="publisahername" type="text" name="publisher_name" required/>
+            </div>
+            <div class="item">
+                <label for="name">Idea Title<span>*</span></label>
+                <input id="name" type="text" name="idea_title" required/>
+            </div>
+
+            <div class="vk">
+
+                <label for="category">Category:</label>
+                <select id="category" name="category1">
+                    <option value="">Select a category</option>
+                    {% for l in category %}
+                    <option value="{{l.id}}">{{l.name}}</option>
+                    {% endfor %}
+                    <!--                    <option value="clothing"></option>-->
+                    <!--                    <option value="home">Retail businesses</option>-->
+                    <!--                    <option value="home">Technology businessy</option>-->
+                    <!--                    <option value="home">Food and beverag businesses</option>-->
+                </select>
+
+                <label for="subcategory">Subcategory:</label>
+                <select id="subcategory" name="subcategory1">
+                    <option value="">Select a subcategory</option>
+                    {% for l in  category %}
+                    <optgroup label="{{l.name}}" data-value="{{l.id}}">
+                        {% for cat in l.subcategory1_set.all %}
+                        <option value="{{cat.id}}" >{{cat.name}}</option>
+                        {% endfor %}
+                    </optgroup>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="costum-file">
+                <span>Click To Uplod Your image</span>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" name="idea_image" required>
+            </div>
+            <div class="item">
+                <label for="Description">Idea Description<span>*</span></label>
+                <!--            <input id="text area " type="Descraption" name="description" required/>-->
+                <textarea id="Description" rows="5" class="form-control" name="idea_description" required>
+            </textarea>
+            </div>
+            <div class="costum-file">
+                <span>Click To Uplod Ideas Documents</span>
+                <input type="file" name="idea_document" required
+                       accept="application/pdf,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+            </div>
+
+            <div class="item">
+                <label for="date">Date of Publish Idea<span>*</span></label>
+                <input id="date" type="date" name="date" required/>
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+
+            <div class="item">
+                <label for="link">Link:</label>
+                <input type="url" id="link" name="urls" required>
+            </div>
+
+            <div class="item">
+                <label for="price">Price<span>*</span></label>
+                <input id="price" type="tel" name="price"  maxlength="4" required/>
+            </div>
+            <!--        <div class="item">-->
+            <!--            <label for="zip">Zip<span>*</span></label>-->
+            <!--            <input id="zip" type="text" name="zip" required/>-->
+            <!--        </div>-->
+
+
+            <!--        <div class="question">-->
+            <!--            <label>Gender</label>-->
+            <!--            <div class="question-answer">-->
+            <!--                <div>-->
+            <!--                    <input type="radio" value="none" id="radio_1" name="gender"/>-->
+            <!--                    <label for="radio_1" class="radio"><span>Male</span></label>-->
+            <!--                </div>-->
+            <!--                <div>-->
+            <!--                    <input type="radio" value="none" id="radio_2" name="gender"/>-->
+            <!--                    <label for="radio_2" class="radio"><span>Female</span></label>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--        </div>-->
+            <!--        <div class="item">-->
+            <!--            <p>T-Shirt Size</p>-->
+            <!--            <select>-->
+            <!--                <option selected value="" disabled selected></option>-->
+            <!--                <option value="course-type">Small</option>-->
+            <!--                <option value="short-courses">Medium</option>-->
+            <!--                <option value="featured-courses">Large</option>-->
+            <!--                <option value="undergraduate">Extra Large</option>-->
+            <!--            </select>-->
+            <!--        </div>-->
+            <!--        <div class="question">-->
+            <!--            <label>Choose Race</label>-->
+            <!--            <div class="question-answer">-->
+            <!--                <div>-->
+            <!--                    <input type="radio" value="none" id="radio_3" name="race"/>-->
+            <!--                    <label for="radio_3" class="radio"><span>5k - $25</span></label>-->
+            <!--                </div>-->
+            <!--                <div>-->
+            <!--                    <input type="radio" value="none" id="radio_4" name="race"/>-->
+            <!--                    <label for="radio_4" class="radio"><span>10K - $25</span></label>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--        </div>-->
+            <div class="btn-block">
+                <button type="submit">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<!--<footer id="footer">-->
+
+<!--    &lt;!&ndash;    <div class="footer-newsletter">&ndash;&gt;-->
+<!--    &lt;!&ndash;      <div class="container">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <div class="row justify-content-center">&ndash;&gt;-->
+<!--    &lt;!&ndash;          <div class="col-lg-6">&ndash;&gt;-->
+<!--    &lt;!&ndash;            <h4>Join Our Newsletter</h4>&ndash;&gt;-->
+<!--    &lt;!&ndash;            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>&ndash;&gt;-->
+<!--    &lt;!&ndash;            <form action="" method="post">&ndash;&gt;-->
+<!--    &lt;!&ndash;              <input type="email" name="email"><input type="submit" value="Subscribe">&ndash;&gt;-->
+<!--    &lt;!&ndash;            </form>&ndash;&gt;-->
+<!--    &lt;!&ndash;          </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;      </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+
+<!--    <div class="footer-top">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+
+<!--                <div class="col-lg-3 col-md-6 footer-contact">-->
+<!--                    <h3>Business Revolution </h3>-->
+<!--                    <p>-->
+<!--                        A108 Adam Street <br>-->
+<!--                        New York, NY 535022<br>-->
+<!--                        United States <br><br>-->
+<!--                        <strong>Phone:</strong> +1 5589 55488 55<br>-->
+<!--                        <strong>Email:</strong> info@example.com<br>-->
+<!--                    </p>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-3 col-md-6 footer-links">-->
+<!--                    <h4>Useful Links</h4>-->
+<!--                    <ul>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-3 col-md-6 footer-links">-->
+<!--                    <h4>Our Services</h4>-->
+<!--                    <ul>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>-->
+<!--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-3 col-md-6 footer-links">-->
+<!--                    <h4>Our Social Networks</h4>-->
+<!--                    <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>-->
+<!--                    <div class="social-links mt-3">-->
+<!--                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>-->
+<!--                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>-->
+<!--                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>-->
+<!--                        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
+<!--                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash;    <div class="container footer-bottom clearfix">&ndash;&gt;-->
+<!--    &lt;!&ndash;      <div class="copyright">&ndash;&gt;-->
+<!--    &lt;!&ndash;        &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved&ndash;&gt;-->
+<!--    &lt;!&ndash;      </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;      <div class="credits">&ndash;&gt;-->
+<!--    &lt;!&ndash;        &lt;!&ndash; All the links in the footer should remain intact. &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;        &lt;!&ndash; You can delete the links only if you purchased the pro version. &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;        &lt;!&ndash; Licensing information: https://bootstrapmade.com/license/ &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;        &lt;!&ndash; Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ &ndash;&gt;&ndash;&gt;-->
+<!--    &lt;!&ndash;        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>&ndash;&gt;-->
+<!--    &lt;!&ndash;      </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+<!--</footer>&lt;!&ndash; End Footer &ndash;&gt;-->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'innovator/vendor/aos/aos.js'%}"></script>
+<script src="{% static 'innovator/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'innovator/vendor/glightbox/js/glightbox.min.js'%}"></script>
+<script src="{% static 'innovator/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+<script src="{% static 'innovator/vendor/swiper/swiper-bundle.min.js'%}"></script>
+<script src="{% static 'innovator/vendor/waypoints/noframework.waypoints.js'%}"></script>
+<script src="{% static 'innovator/vendor/php-email-form/validate.js'%}"></script>
+<script src="{% static 'innovator/vendor/option.js'%}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'innovator/js/main.js'%}"></script>
+
+</body>
+
+</html>
