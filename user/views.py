@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth import authenticate, login
-from user.models import register, user_contact, about_us, ideas_discription, subscribe, user_upload, category, \
+from user.models import register, user_contact, about_us, idea_description, subscribe, user_upload, category, \
     sub_category, Order
 from innovator.models import innovator_uploads, category_innovator, sub_category_innovator
 from django.conf import settings
@@ -15,6 +15,7 @@ import datetime
 import json
 from django.http import HttpResponse
 from django.contrib import messages
+
 
 def load(request):
     if request.POST:
@@ -80,11 +81,13 @@ def loadfile(request):
     about = about_us.objects.all()
     data = innovator_uploads.objects.all()
     data2 = register.objects.all()
-    data5=order_Show.objects.all()
+    data5 = order_Show.objects.all()
     data1 = data.count()
     data3 = data2.count()
-    data6=data5.count()
-    return render(request, 'user/home.html', {"about": about, "data": data,"data1":data1,"data2":data2,"data3":data3,"data5":data5,"data6":data6})
+    data6 = data5.count()
+    return render(request, 'user/home.html',
+                  {"about": about, "data": data, "data1": data1, "data2": data2, "data3": data3, "data5": data5,
+                   "data6": data6})
 
 
 def home(request):
@@ -95,7 +98,9 @@ def home(request):
     data1 = data.count()
     data3 = data2.count()
     data6 = data5.count()
-    return render(request, 'user/home.html', {"about": about, "data": data,"data1":data1,"data2":data2,"data3":data3,"data5":data5,"data5":data5})
+    return render(request, 'user/home.html',
+                  {"about": about, "data": data, "data1": data1, "data2": data2, "data3": data3, "data5": data5,
+                   "data5": data5})
 
 
 def about(request):
@@ -140,9 +145,8 @@ def readmore(request, id):
     subcategory = sub_category_innovator.objects.all()
     data1 = innovator_uploads.objects.all().order_by('-id')[0:5]
 
-    return render(request, "user/readmore.html", {"data": data, "category": category, "subcategory": subcategory , "data1":data1})
-
-
+    return render(request, "user/readmore.html",
+                  {"data": data, "category": category, "subcategory": subcategory, "data1": data1})
 
 
 def profile(request):
@@ -157,6 +161,7 @@ def profile(request):
     re = register.objects.get(id=uid)
     return render(request, "user/profile.html", {"re": re})
 
+
 def i_save(request):
     uid = request.session.get('user_id')
 
@@ -164,6 +169,7 @@ def i_save(request):
         iuid = request.POST['iuid']
 
     return redirect('/index')
+
 
 def password(request):
     return render(request, "user/changepassword.html")
@@ -175,18 +181,17 @@ def anotherway(request):
 
 def user_upload(request):
     if request.POST:
-        publisher_name = request.POST['publisher_name']
-        phoneno = request.POST['phoneno']
-        idea_title = request.POST['idea_title']
-        ideas_image = request.FILES['ideas_image']
-        idea_description = request.POST['idea_description']
-        idea_document = request.FILES['idea_document']
-        date = request.POST['date']
-        urls = request.POST['urls']
         uid = request.session.get('user_id')
-        obj = user_upload(publisher_name=publisher_name, phoneno=phoneno, idea_title=idea_title, ideas_image=ideas_image,
-                          idea_description=idea_description,
-                          idea_document=idea_document, date=date, urls=urls)
+        obj = user_upload(
+            publisher_name=request.POST['publisher_name'],
+            phoneno=request.POST['phoneno'],
+            idea_title=request.POST['idea_title'],
+            ideas_image=request.FILES['ideas_image'],
+            idea_description=request.POST['idea_description'],
+            idea_document=request.FILES['idea_document'],
+            date=request.POST['date'],
+            urls=request.POST['urls'])
+        print(obj)
         obj.user_id_id = uid
         obj.save()
         return redirect('/user_upload')
@@ -211,8 +216,9 @@ def idea(request):
     data = innovator_uploads.objects.all()
     category = category_innovator.objects.all()
     subcategory = sub_category_innovator.objects.all()
-    data1=innovator_uploads.objects.all().order_by('-id')[0:5]
-    return render(request, 'user/idea1.html', {"data": data, "category": category, "subcategory": subcategory , "data1":data1})
+    data1 = innovator_uploads.objects.all().order_by('-id')[0:5]
+    return render(request, 'user/idea1.html',
+                  {"data": data, "category": category, "subcategory": subcategory, "data1": data1})
 
 
 def search(request):
@@ -226,9 +232,6 @@ def search(request):
 
 def index(request):
     return render(request, "user/index.html")
-
-
-
 
 
 def order_payment(request):
@@ -302,20 +305,22 @@ def cat(request, id):
 def view_order(request):
     uid = request.session.get('user_id')
     data = order_Show.objects.filter(uid=uid)
-    return render(request, "user/order.html",{"data":data})
+    return render(request, "user/order.html", {"data": data})
+
 
 def buyorder(request):
     uid = request.session.get('user_id')
     x = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     if request.POST:
-        ui_id=request.POST['id']
+        ui_id = request.POST['id']
     data1 = order_Show(date=x)
     data1.uid_id = uid
     data1.iu_id_id = ui_id
     data1.save()
-    data=innovator_uploads.objects.get(id=ui_id)
-    return render(request, "user/buyorder.html",{"data":data})
+    data = innovator_uploads.objects.get(id=ui_id)
+    return render(request, "user/buyorder.html", {"data": data})
 
-def details1(request,id):
-    data=order_Show.objects.get(id=id)
-    return render(request, "user/details1.html", {"data":data})
+
+def details1(request, id):
+    data = order_Show.objects.get(id=id)
+    return render(request, "user/details1.html", {"data": data})
