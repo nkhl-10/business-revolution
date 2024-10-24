@@ -53,7 +53,7 @@ class subscribe(models.Model):
 
 
 # user upload ideas
-class user_upload(models.Model):
+class user_upload_idea(models.Model):
     user_id = models.ForeignKey(register, on_delete=models.CASCADE)
     publisher_name = models.CharField(max_length=30)
     phoneno = models.IntegerField()

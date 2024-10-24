@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth import authenticate, login
-from user.models import register, user_contact, about_us, idea_description, subscribe, user_upload, category, \
+from user.models import register, user_contact, about_us, idea_description, subscribe, user_upload_idea, category, \
     sub_category, Order
 from innovator.models import innovator_uploads, category_innovator, sub_category_innovator
 from django.conf import settings
@@ -182,14 +182,15 @@ def anotherway(request):
 def user_upload(request):
     if request.POST:
         uid = request.session.get('user_id')
-        obj = user_upload(
-            publisher_name=request.POST['publisher_name'],
-            phoneno=request.POST['phoneno'],
+        uname = request.session.get('uname')
+        phoneno = request.session.get('phoneno')
+        obj = user_upload_idea(
+            publisher_name=uname,  # request.POST['publisher_name'],
+            phoneno=phoneno,
             idea_title=request.POST['idea_title'],
             ideas_image=request.FILES['ideas_image'],
             idea_description=request.POST['idea_description'],
             idea_document=request.FILES['idea_document'],
-            date=request.POST['date'],
             urls=request.POST['urls'])
         print(obj)
         obj.user_id_id = uid

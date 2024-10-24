@@ -318,63 +318,25 @@
 </div>
 <!-- Navbar End -->
 
-
-<!-- Full Screen Search Start -->
-<div class="modal fade" id="searchModal" tabindex="-1">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-            <div class="modal-header border-0">
-                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex align-items-center justify-content-center">
-                <div class="input-group" style="max-width: 600px;">
-                    <input type="text" class="form-control bg-transparent border-primary p-3"
-                           placeholder="Type search keyword">
-                    <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Full Screen Search End -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-fluid   wow fadeInUp" data-wow-delay="0.1s">
     <div class="testbox">
         <form action="user_upload" method="post" class="k1" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="container-fluid bg-primary py-5 bg-header">
-                <div class="row py-5">
-                    <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                        <h1 class="display-4 text-white animated zoomIn">Upload Ideas</h1>
-                        <a href="" class="h5 text-white">Business Revolution</a>
-                        <i class="far fa-circle text-white px-2"></i>
-                        <a href="" class="h5 text-white"> Upload Ideas</a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <label for="name">Publisher Name <span>*</span></label>
-                <input id="publisahername" type="text" name="publisher_name" required/>
-            </div>
-            <div class="item">
-                <label for="phone">Phone<span>*</span></label>
-                <input id="phone" type="tel" name="phoneno" required minlength="10" maxlength="10" required/>
-            </div>
             <div class="item">
                 <label for="name">Idea Title<span>*</span></label>
                 <input id="name" type="text" name="idea_title" required/>
             </div>
 
+             <div class="item">
+                <label for="Description">Idea Description<span>*</span></label>
+                <textarea id="Description" rows="3" class="form-control" name="idea_description" required>
+            </textarea>
+            </div>
             <div class="costum-file">
                 <span>Click To Upload Thumbnail</span>
                 <input type="file" accept="image/jpeg, image/png, image/jpg" name="ideas_image">
             </div>
-            <div class="item">
-                <label for="Description">Idea Description<span>*</span></label>
-                <!--            <input id="text area " type="Descraption" name="description" required/>-->
-                <textarea id="Description" rows="5" class="form-control" name="idea_description" required>
-            </textarea>
-            </div>
+
             <div class="costum-file">
                 <span>Click To Uplod Ideas Documents</span>
                 <input type="file" required
@@ -386,11 +348,7 @@
                 <input type="url" id="link" name="urls" required>
             </div>
 
-            <div class="item">
-                <label for="date">Date of Publish Idea<span>*</span></label>
-                <input id="date" type="date" name="date" required/>
-                <i class="fas fa-calendar-alt"></i>
-            </div>
+
             <div class="btn-block">
                 <button type="submit">SUBMIT</button>
             </div>
