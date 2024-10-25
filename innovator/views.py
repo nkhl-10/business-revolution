@@ -3,7 +3,6 @@ from .models import register_innovator, category_innovator, innovator_uploads
 from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib import messages
-from django.http import HttpResponse
 
 
 # Create your views here.
@@ -34,7 +33,7 @@ from django.http import HttpResponse
 
 def load(request):
     if request.session.has_key('innovator_id'):
-        return redirect('/upload')
+        return render(request, 'innovator/index.html')
     return render(request, 'innovator/login.html')
 
 
@@ -50,7 +49,6 @@ def signup(request):
         request.session['phoneno'] = phone_no
         request.session['username'] = username
         request.session['password1'] = password
-
         subject = 'thank you for registration to BUSINESS REVOLUTION'
         message = 'thank you for my website'
         email_from = settings.EMAIL_HOST_USER
@@ -110,9 +108,16 @@ def upload(request):
         category = request.POST['category1']
         subcategory = request.POST['subcategory1']
         uid = request.session.get('innovator_id')
-        obj = innovator_uploads(publisher_name=publisher_name, idea_title=idea_title, idea_image=idea_image,
-                                idea_description=idea_description, idea_document=idea_document,
-                                date=date, urls=urls, price=price, category1_id=category, subcategory1_id=subcategory)
+        obj = innovator_uploads(
+            publisher_name=publisher_name,
+            idea_title=idea_title,
+            idea_image=idea_image,
+            idea_description=idea_description,
+            idea_document=idea_document,
+            date=date,
+            urls=urls, price=price,
+            category1_id=category,
+            subcategory1_id=subcategory)
         obj.innovator_id_id = uid
         obj.save()
         return redirect('/upload')
@@ -128,7 +133,6 @@ def profile(request):
         password1 = request.POST['password1']
         obj = register_innovator(username=username, phoneno=phoneno, email1=email1, password1=password1, id=uid)
         obj.save()
-
         request.session['email1'] = email1
         request.session['phoneno'] = phoneno
         request.session['username'] = username
