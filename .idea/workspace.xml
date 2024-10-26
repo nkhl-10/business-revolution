@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e924f3-c05a-4af1-8007-ec90cb7d1e28" name="Changes" comment="changes requirements.txt 2">
+    <list default="true" id="21e924f3-c05a-4af1-8007-ec90cb7d1e28" name="Changes" comment="some code changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/innovator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/innovator/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/innovator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/innovator/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/innovator/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/innovator/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729872623654</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="some code changes">
+      <created>1729876595322</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729876595322</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,6 +102,7 @@
     <MESSAGE value="pip freeze &gt; requirements.txt" />
     <MESSAGE value="changes requirements.txt" />
     <MESSAGE value="changes requirements.txt 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes requirements.txt 2" />
+    <MESSAGE value="some code changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="some code changes" />
   </component>
 </project>
