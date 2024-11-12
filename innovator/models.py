@@ -41,8 +41,11 @@ class innovator_uploads(models.Model):
     idea_document = models.FileField(upload_to='documents/')
     date = datetime.datetime.now()
     urls = models.URLField(max_length=300)
-    category = models.ForeignKey(category_innovator, on_delete=models.CASCADE, default=True)
-    subcategory = models.ForeignKey(sub_category_innovator, on_delete=models.CASCADE, default=True)
+    # category = models.ForeignKey(category_innovator, on_delete=models.CASCADE, default=True)
+    # subcategory = models.ForeignKey(sub_category_innovator, on_delete=models.CASCADE, default=True)
+
+    category = models.IntegerField()
+    subcategory = models.IntegerField()
     price = models.IntegerField()
 
     def admin_photo(self):

@@ -54,7 +54,7 @@ def signup(request):
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         send_mail(subject, message, email_from, recipient_list)
-        return redirect('/login')
+        return redirect('innovator/login')
     return render(request, 'innovator/login.html')
 
 
@@ -67,24 +67,47 @@ def login(request):
             request.session['innovator_id'] = True
             request.session['innovator_id'] = \
                 register_innovator.objects.values('id').filter(email=email, password=password)[0]['id']
-            return redirect('/upload')
+            return redirect('/innovator/upload')
         else:
             if not register_innovator.objects.filter(email=email):
                 messages.error(request, "Please must be enter a valid email!!!")
-                return redirect('/login')
+                return redirect('/innovator/login')
             if not register_innovator.objects.filter(password=password):
                 messages.error(request, "Password must be enter a valid password!!! ")
-                return redirect('/login')
+                return redirect('/innovator/login')
     return render(request, "innovator/login.html")
+
+
+def upload(request):
+    category = category_innovator.objects.all()
+    if request.POST:
+        try:
+            obj = innovator_uploads(
+                publisher_name=request.POST['publisher_name'],
+                idea_title=request.POST['idea_title'],
+                idea_image=request.FILES['idea_image'],
+                idea_description=request.POST['idea_description'],
+                idea_document=request.FILES['idea_document'],
+                urls=request.POST['urls'],
+                price=request.POST['price'],
+                category1_id=request.POST['category1'],
+                subcategory1_id=request.POST['subcategory1'])
+            obj.innovator_id_id = request.session.get('innovator_id')
+            obj.save()
+        except Exception as e:
+            # Log the error and show an error message
+            print(f"Error occurred: {e}")
+        return redirect('innovator/upload')
+    return render(request, "innovator/uploads.html", {"category": category})
 
 
 def logout(request):
     try:
         if request.method == 'GET':
             del request.session['innovator_id']
-            return redirect('/login')
+            return redirect('/innovator/login')
     except KeyError:
-        return redirect('/login')
+        return redirect('/innovator/login')
 
 
 # def loadfile(request):
@@ -92,36 +115,6 @@ def logout(request):
 #
 # def home(request):
 #     return render(request, "innovator/index.html")
-
-
-def upload(request):
-    category = category_innovator.objects.all()
-    if request.POST:
-        publisher_name = request.POST['publisher_name']
-        idea_title = request.POST['idea_title']
-        idea_image = request.FILES['idea_image']
-        idea_description = request.POST['idea_description']
-        idea_document = request.FILES['idea_document']
-        date = request.POST['date']
-        urls = request.POST['urls']
-        price = request.POST['price']
-        category = request.POST['category1']
-        subcategory = request.POST['subcategory1']
-        uid = request.session.get('innovator_id')
-        obj = innovator_uploads(
-            publisher_name=publisher_name,
-            idea_title=idea_title,
-            idea_image=idea_image,
-            idea_description=idea_description,
-            idea_document=idea_document,
-            date=date,
-            urls=urls, price=price,
-            category1_id=category,
-            subcategory1_id=subcategory)
-        obj.innovator_id_id = uid
-        obj.save()
-        return redirect('/upload')
-    return render(request, "innovator/uploads.html", {"category": category})
 
 
 def profile(request):

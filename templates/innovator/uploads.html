@@ -335,25 +335,49 @@ vk
 
             <div class="vk">
 
-                <label for="category">Category:</label>
-                <select id="category" name="category1">
-                    <option value="">Select a category</option>
-                    {% for l in category %}
-                    <option value="{{l.id}}">{{l.name}}</option>
-                    {% endfor %}
-                </select>
+<!--                <label for="category">Category:</label>-->
+<!--                <select id="category" name="category1">-->
+<!--                    <option value="">Select a category</option>-->
+<!--                    {% for l in category %}-->
+<!--                    <option value="{{l.id}}">{{l.name}}</option>-->
+<!--                    {% endfor %}-->
+<!--                </select>-->
 
-                <label for="subcategory">Subcategory:</label>
-                <select id="subcategory" name="subcategory1">
-                    <option value="">Select a subcategory</option>
-                    {% for l in  category %}
-                    <optgroup label="{{l.name}}" data-value="{{l.id}}">
-                        {% for cat in l.subcategory1_set.all %}
-                        <option value="{{cat.id}}" >{{cat.name}}</option>
-                        {% endfor %}
-                    </optgroup>
-                    {% endfor %}
-                </select>
+<!--                <label for="subcategory">Subcategory:</label>-->
+<!--                <select id="subcategory" name="subcategory1">-->
+<!--                    <option value="">Select a subcategory</option>-->
+<!--                    {% for l in  category %}-->
+<!--                    <optgroup label="{{l.name}}" data-value="{{l.id}}">-->
+<!--                        {% for cat in l.subcategory1_set.all %}-->
+<!--                        <option value="{{cat.id}}" >{{cat.name}}</option>-->
+<!--                        {% endfor %}-->
+<!--                    </optgroup>-->
+<!--                    {% endfor %}-->
+<!--                </select>
+-->
+<label for="category">Category:</label>
+<select id="category" name="category1" onchange="filterSubcategories()">
+    <option value="">Select a category</option>
+    {% for l in category %}
+        <option value="{{ l.id }}">{{ l.name }}</option>
+    {% endfor %}
+</select>
+
+<label for="subcategory">Subcategory:</label>
+<select id="subcategory" name="subcategory1">
+    <option value="">Select a subcategory</option>
+    {% for l in category %}
+        <optgroup label="{{ l.name }}" data-category-id="{{ l.id }}">
+            {% for cat in l.sub_category_innovator_set.all %}
+                <option value="{{ cat.id }}">{{ cat.name }}</option>
+            {% endfor %}
+        </optgroup>
+    {% endfor %}
+</select>
+
+
+
+
             </div>
             <div class="costum-file">
                 <span>Click To Upload Thumbnail</span>
@@ -409,7 +433,19 @@ vk
 
 <!-- Template Main JS File -->
 <script src="{% static 'innovator/js/main.js'%}"></script>
+<script>
+function filterSubcategories() {
+    const categorySelect = document.getElementById('category');
+    const selectedCategory = categorySelect.value;
+    const subcategorySelect = document.getElementById('subcategory');
 
+    // Show only relevant subcategories
+    const optgroups = subcategorySelect.querySelectorAll('optgroup');
+    optgroups.forEach(group => {
+        group.style.display = group.getAttribute('data-category-id') === selectedCategory ? 'block' : 'none';
+    });
+}
+</script>
 </body>
 
 </html>

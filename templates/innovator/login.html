@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="{%static 'innovator/styles.css'%}">
-    <title>signin-signup</title>
+    <title>Innovator Signup</title>
 </head>
 
 <body>
     <div class="container">
         <div class="signin-signup">
-            <form action="login" method="post" class="sign-in-form">
+            <form action="/innovator/login" method="post" class="sign-in-form">
                 {% csrf_token %}
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">

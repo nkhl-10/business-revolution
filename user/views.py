@@ -181,19 +181,16 @@ def anotherway(request):
 
 def user_upload(request):
     if request.POST:
-        uid = request.session.get('user_id')
-        uname = request.session.get('uname')
-        phoneno = request.session.get('phoneno')
         obj = user_upload_idea(
-            publisher_name=uname,  # request.POST['publisher_name'],
-            phoneno=phoneno,
+            publisher_name=request.session.get('uname') ,  # request.POST['publisher_name'],
+            phoneno=request.session.get('phoneno'),
             idea_title=request.POST['idea_title'],
             ideas_image=request.FILES['ideas_image'],
             idea_description=request.POST['idea_description'],
             idea_document=request.FILES['idea_document'],
             urls=request.POST['urls'])
         print(obj)
-        obj.user_id_id = uid
+        obj.user_id_id = request.session.get('user_id')
         obj.save()
         return redirect('/user_upload')
     return render(request, "user/upload.html")
