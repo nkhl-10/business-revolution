@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/business revolution.iml" filepath="$PROJECT_DIR$/.idea/business revolution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/business_revolution.iml" filepath="$PROJECT_DIR$/.idea/business_revolution.iml" />
     </modules>
   </component>
 </project>
