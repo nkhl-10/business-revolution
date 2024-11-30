@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e924f3-c05a-4af1-8007-ec90cb7d1e28" name="Changes" comment="fix issue in read more page">
+    <list default="true" id="21e924f3-c05a-4af1-8007-ec90cb7d1e28" name="Changes" comment="fix issue in admin url">
+      <change afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weebserver/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/weebserver/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1732980736862</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix issue in admin url">
+      <created>1732982693406</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732982693407</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,7 +151,8 @@
     <MESSAGE value="some code changes" />
     <MESSAGE value="fix issue" />
     <MESSAGE value="fix issue in read more page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix issue in read more page" />
+    <MESSAGE value="fix issue in admin url" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix issue in admin url" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
