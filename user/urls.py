@@ -38,7 +38,7 @@ urlpatterns = [
                   path('profile', views.profile),
                   path('password', views.password),
                   path('anotherway', views.anotherway),
-                  path('readmore/<int:id>/', views.readmore),
+                  path('readmore/<int:id>', views.readmore),
                   path('user_upload', views.user_upload),
                   path('subscribe2', views.subscribe2),
                   path('search', views.search),

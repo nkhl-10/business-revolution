@@ -86,9 +86,6 @@
         <div class="row py-5">
             <div class="col-12 pt-lg-5 mt-lg-5 text-center">
                 <h1 class="display-4 text-white animated zoomIn">Ideas Detail</h1>
-                <a href="" class="h5 text-white">Home</a>
-                <i class="far fa-circle text-white px-2"></i>
-                <a href="Readmore" class="h5 text-white">Ideas Detail</a>
             </div>
         </div>
     </div>
@@ -125,18 +122,19 @@
                 <!-- Blog Detail Start -->
                 <div class="mb-5">
                     <img class="img-fluid w-100 rounded mb-5" src="{{data.idea_image.url}}" alt="">
-                    <h1 class="mb-4">{{data.idea_title}} [amount:- {{data.price}}]</h1>
+                    <h1 class="mb-4">{{data.idea_title}}</h1>
                     <div class="d-flex mb-3">
-                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>{{data.publisher_name}}</small>
-                        <small><i class="far fa-calendar-alt text-primary me-2"></i>{{data.date}}</small>
+                        <h5 class="me-3"><i class="far fa-user text-primary me-2"></i>{{data.publisher_name}}</h5>
+                        <h5><i class="far fa-calendar-alt text-primary me-2"></i>{{data.date}}</h5>
                     </div>
-                    <p>{{data.idea_description}}</p>
+                    <h4 style="padding-top: 20px; padding-bottom: 20px; ">{{data.idea_description}}</h4>
+                    <h4>Amount {{data.price}}</h4>
                     <form action="/buyorder" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="id" value="{{data.id}}">
-                    <button class="text-uppercase">next<i
-                            class="bi bi-arrow-right"></i></button>
-                        </form>
+                        <button class="text-uppercase" style="padding: 20px; font-size: 20px;">
+                            next<i class="bi bi-arrow-right"></i></button>
+                    </form>
                 </div>
 
                 <!-- Blog Detail End -->
@@ -241,7 +239,8 @@
                     <div class="d-flex rounded overflow-hidden mb-3">
                         <img class="img-fluid" src="{{i.idea_image.url}}"
                              style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                        <a href="readmore/{{i.id}}" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">{{i.idea_title}}
+                        <a href="readmore/{{i.id}}"
+                           class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">{{i.idea_title}}
                         </a>
                     </div>
                     {% endfor %}

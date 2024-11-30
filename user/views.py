@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.contrib.auth import authenticate, login
 from user.models import register, user_contact, about_us, idea_description, subscribe, user_upload_idea, category, \
@@ -13,7 +13,7 @@ import razorpay
 import datetime
 # Create your views here.
 import json
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.contrib import messages
 
 
@@ -182,7 +182,7 @@ def anotherway(request):
 def user_upload(request):
     if request.POST:
         obj = user_upload_idea(
-            publisher_name=request.session.get('uname') ,  # request.POST['publisher_name'],
+            publisher_name=request.session.get('uname'),  # request.POST['publisher_name'],
             phoneno=request.session.get('phoneno'),
             idea_title=request.POST['idea_title'],
             ideas_image=request.FILES['ideas_image'],
