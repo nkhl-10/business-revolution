@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e924f3-c05a-4af1-8007-ec90cb7d1e28" name="Changes" comment="fix issue">
+    <list default="true" id="21e924f3-c05a-4af1-8007-ec90cb7d1e28" name="Changes" comment="fix issue in read more page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/details1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/details1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/readmore.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/readmore.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729935902037</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix issue in read more page">
+      <created>1732980736862</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732980736862</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,7 +142,8 @@
     <MESSAGE value="changes requirements.txt 2" />
     <MESSAGE value="some code changes" />
     <MESSAGE value="fix issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix issue" />
+    <MESSAGE value="fix issue in read more page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix issue in read more page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
