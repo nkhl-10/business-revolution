@@ -136,7 +136,7 @@
                     <h5 class="text-white text-uppercase mb-3 animated slideInDown">BUSINESS REVOLUTION</h5>
                     <h1 class="display-1 text-white mb-md-4 animated zoomIn">Buy And Sell The Ideas </h1>
                     <a href="idea" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">BUY IDEAS</a>
-                    <a href="user_upload" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">UPLOAD
+                    <a href="innovator/upload" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">UPLOAD
                         IDEAS</a>
                 </div>
             </div>
@@ -567,20 +567,20 @@
                                     class="far fa-user text-primary me-2"></i>{{i.publisher_name}}</small>
                             <small><i class="far fa-calendar-alt text-primary me-2"></i>{{i.date}}</small>
                         </div>
-                        <h4 class="mb-3">How to build a website</h4>
+                        <h4 class="mb-3">{{i.idea_title}}</h4>
                         <p style="text-align:left;">
                             <!--                                    {{i.idea_description}}-->
                             {% load custom_tags %}
                             {% get_halfContent i.idea_description as halfContent %}
                             {{halfContent}}
                         </p>
-                        <a class="text-uppercase" href="readmore/{{i.id}}">Read More <i
-                                class="bi bi-arrow-right"></i></a>
+                        <a class="text-uppercase" href="readmore/{{i.id}}">
+                            Read More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
             {% endfor %}
-            <a href="idea" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+            <a href="idea" class="btn  py-md-3 px-md-5 me-3 animated slideInLeft" style="margin-bottom:10px; margin-top:5px;">Read More Idea Explore</a>
         </div>
     </div>
 </div>

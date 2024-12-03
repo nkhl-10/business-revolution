@@ -282,6 +282,7 @@ vk
 
 
 
+
     </style>
 </head>
 
@@ -312,7 +313,7 @@ vk
 
 <main id="main">
     <div class="testbox">
-        <form action="upload" class="k1" method="post" enctype="multipart/form-data">
+        <form   class="k1" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="banner">
                 <div class="row py-5">
@@ -332,52 +333,26 @@ vk
                 <label for="name">Idea Title<span>*</span></label>
                 <input id="name" type="text" name="idea_title" required/>
             </div>
+            <div class="item">
+                <label for="category">Category:</label>
+                <select id="category" name="category1" onchange="filterSubcategories()">
+                    <option value="">Select a category</option>
+                    {% for l in category %}
+                    <option value="{{ l.id }}">{{ l.name }}</option>
+                    {% endfor %}
+                </select>
 
-            <div class="vk">
-
-<!--                <label for="category">Category:</label>-->
-<!--                <select id="category" name="category1">-->
-<!--                    <option value="">Select a category</option>-->
-<!--                    {% for l in category %}-->
-<!--                    <option value="{{l.id}}">{{l.name}}</option>-->
-<!--                    {% endfor %}-->
-<!--                </select>-->
-
-<!--                <label for="subcategory">Subcategory:</label>-->
-<!--                <select id="subcategory" name="subcategory1">-->
-<!--                    <option value="">Select a subcategory</option>-->
-<!--                    {% for l in  category %}-->
-<!--                    <optgroup label="{{l.name}}" data-value="{{l.id}}">-->
-<!--                        {% for cat in l.subcategory1_set.all %}-->
-<!--                        <option value="{{cat.id}}" >{{cat.name}}</option>-->
-<!--                        {% endfor %}-->
-<!--                    </optgroup>-->
-<!--                    {% endfor %}-->
-<!--                </select>
--->
-<label for="category">Category:</label>
-<select id="category" name="category1" onchange="filterSubcategories()">
-    <option value="">Select a category</option>
-    {% for l in category %}
-        <option value="{{ l.id }}">{{ l.name }}</option>
-    {% endfor %}
-</select>
-
-<label for="subcategory">Subcategory:</label>
-<select id="subcategory" name="subcategory1">
-    <option value="">Select a subcategory</option>
-    {% for l in category %}
-        <optgroup label="{{ l.name }}" data-category-id="{{ l.id }}">
-            {% for cat in l.sub_category_innovator_set.all %}
-                <option value="{{ cat.id }}">{{ cat.name }}</option>
-            {% endfor %}
-        </optgroup>
-    {% endfor %}
-</select>
-
-
-
-
+                <label for="subcategory">Subcategory:</label>
+                <select id="subcategory" name="subcategory1">
+                    <option value="">Select a subcategory</option>
+                    {% for l in category %}
+                    <optgroup label="{{ l.name }}" data-category-id="{{ l.id }}">
+                        {% for cat in l.sub_category_innovator_set.all %}
+                        <option value="{{ cat.id }}">{{ cat.name }}</option>
+                        {% endfor %}
+                    </optgroup>
+                    {% endfor %}
+                </select>
             </div>
             <div class="costum-file">
                 <span>Click To Upload Thumbnail</span>
@@ -393,21 +368,13 @@ vk
                 <input type="file" name="idea_document" required
                        accept="application/pdf,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
             </div>
-
-            <div class="item">
-                <label for="date">Date of Publish Idea<span>*</span></label>
-                <input id="date" type="date" name="date" required/>
-                <i class="fas fa-calendar-alt"></i>
-            </div>
-
             <div class="item">
                 <label for="link">Link:</label>
                 <input type="url" id="link" name="urls" required>
             </div>
-
             <div class="item">
                 <label for="price">Price<span>*</span></label>
-                <input id="price" type="tel" name="price"  maxlength="4" required/>
+                <input id="price" type="tel" name="price" maxlength="4" required/>
             </div>
             <div class="btn-block">
                 <button type="submit">SUBMIT</button>
@@ -445,6 +412,7 @@ function filterSubcategories() {
         group.style.display = group.getAttribute('data-category-id') === selectedCategory ? 'block' : 'none';
     });
 }
+
 </script>
 </body>
 

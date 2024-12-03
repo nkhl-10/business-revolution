@@ -79,25 +79,23 @@ def login(request):
 
 
 def upload(request):
+    if not request.session.get('innovator_id', False):
+        return redirect('/innovator/login')
     category = category_innovator.objects.all()
     if request.POST:
-        try:
-            obj = innovator_uploads(
-                publisher_name=request.POST['publisher_name'],
-                idea_title=request.POST['idea_title'],
-                idea_image=request.FILES['idea_image'],
-                idea_description=request.POST['idea_description'],
-                idea_document=request.FILES['idea_document'],
-                urls=request.POST['urls'],
-                price=request.POST['price'],
-                category1_id=request.POST['category1'],
-                subcategory1_id=request.POST['subcategory1'])
-            obj.innovator_id_id = request.session.get('innovator_id')
-            obj.save()
-        except Exception as e:
-            # Log the error and show an error message
-            print(f"Error occurred: {e}")
-        return redirect('innovator/upload')
+        obj = innovator_uploads(
+            publisher_name=request.POST['publisher_name'],
+            idea_title=request.POST['idea_title'],
+            idea_image=request.FILES['idea_image'],
+            idea_description=request.POST['idea_description'],
+            idea_document=request.FILES['idea_document'],
+            urls=request.POST['urls'],
+            price=request.POST['price'],
+            category=request.POST['category1'],
+            subcategory=request.POST['subcategory1'])
+        obj.innovator_id_id = request.session.get('innovator_id')
+        obj.save()
+        return redirect('upload_idea')
     return render(request, "innovator/uploads.html", {"category": category})
 
 

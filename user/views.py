@@ -1,20 +1,15 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import *
-from django.contrib.auth import authenticate, login
-from user.models import register, user_contact, about_us, idea_description, subscribe, user_upload_idea, category, \
-    sub_category, Order
-from innovator.models import innovator_uploads, category_innovator, sub_category_innovator
-from django.conf import settings
-from django.core.mail import send_mail
-from .constants import PaymentStatus
-import json
-from django.views.decorators.csrf import csrf_exempt
-import razorpay
 import datetime
 # Create your views here.
 import json
-from django.http import HttpResponse, Http404
+
+import razorpay
+from django.conf import settings
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from django.views.decorators.csrf import csrf_exempt
+
+from .models import *
 
 
 def load(request):
@@ -150,6 +145,8 @@ def readmore(request, id):
 
 
 def profile(request):
+    if not request.session.get('is_login', False):
+        return redirect('/login')
     uid = request.session.get('user_id')
     if request.POST:
         uname = request.POST['uname']
@@ -179,21 +176,6 @@ def anotherway(request):
     return render(request, "user/anotherway.html")
 
 
-def user_upload(request):
-    if request.POST:
-        obj = user_upload_idea(
-            publisher_name=request.session.get('uname'),  # request.POST['publisher_name'],
-            phoneno=request.session.get('phoneno'),
-            idea_title=request.POST['idea_title'],
-            ideas_image=request.FILES['ideas_image'],
-            idea_description=request.POST['idea_description'],
-            idea_document=request.FILES['idea_document'],
-            urls=request.POST['urls'])
-        print(obj)
-        obj.user_id_id = request.session.get('user_id')
-        obj.save()
-        return redirect('/user_upload')
-    return render(request, "user/upload.html")
 
 
 def subscribe2(request):
@@ -301,12 +283,16 @@ def cat(request, id):
 
 
 def view_order(request):
+    if not request.session.get('is_login', False):
+        return redirect('/login')
     uid = request.session.get('user_id')
     data = order_Show.objects.filter(uid=uid)
     return render(request, "user/order.html", {"data": data})
 
 
 def buyorder(request):
+    if not request.session.get('is_login', False):
+        return redirect('/login')
     uid = request.session.get('user_id')
     x = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     if request.POST:

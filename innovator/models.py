@@ -39,7 +39,7 @@ class innovator_uploads(models.Model):
     idea_image = models.ImageField(upload_to='images/')
     idea_description = models.TextField()
     idea_document = models.FileField(upload_to='documents/')
-    date = datetime.datetime.now()
+    date = models.DateField(auto_now_add=True)
     urls = models.URLField(max_length=300)
     # category = models.ForeignKey(category_innovator, on_delete=models.CASCADE, default=True)
     # subcategory = models.ForeignKey(sub_category_innovator, on_delete=models.CASCADE, default=True)

@@ -52,22 +52,6 @@ class subscribe(models.Model):
     email = models.EmailField()
 
 
-# user upload ideas
-class user_upload_idea(models.Model):
-    user_id = models.ForeignKey(register, on_delete=models.CASCADE)
-    publisher_name = models.CharField(max_length=30)
-    phoneno = models.IntegerField()
-    idea_title = models.CharField(max_length=30)
-    ideas_image = models.ImageField(upload_to='images/')
-    idea_description = models.TextField()
-    idea_document = models.FileField(upload_to='documents/')
-    urls = models.URLField(max_length=100)
-    date = models.DateField(auto_now_add=True)
-
-    def __str__(self):
-        return self.publisher_name
-
-
 class category(models.Model):
     name = models.CharField(max_length=50)
 
