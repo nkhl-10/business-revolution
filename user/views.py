@@ -73,34 +73,34 @@ def logout(request):
 
 
 def loadfile(request):
-    about = about_us.objects.all()
-    data = innovator_uploads.objects.all()
+    about_data = about_us.objects.all()
+    idea_data = innovator_uploads.objects.order_by('?')[:3]
+    idea_count = innovator_uploads.objects.count()
     data2 = register.objects.all()
     data5 = order_Show.objects.all()
-    data1 = data.count()
     data3 = data2.count()
     data6 = data5.count()
     return render(request, 'user/home.html',
-                  {"about": about, "data": data, "data1": data1, "data2": data2, "data3": data3, "data5": data5,
+                  {"about": about_data, "idea_data": idea_data, "idea_count":idea_count , "data2": data2, "data3": data3, "data5": data5,
                    "data6": data6})
 
 
 def home(request):
-    about = about_us.objects.all()
-    data = innovator_uploads.objects.all()
+    about_data = about_us.objects.all()
+    idea_data = innovator_uploads.objects.order_by('?')[:3]
+    idea_count = innovator_uploads.objects.count()
     data2 = register.objects.all()
     data5 = order_Show.objects.all()
-    data1 = data.count()
     data3 = data2.count()
     data6 = data5.count()
     return render(request, 'user/home.html',
-                  {"about": about, "data": data, "data1": data1, "data2": data2, "data3": data3, "data5": data5,
-                   "data5": data5})
+                  {"about": about_data, "idea_data": idea_data, "idea_count": idea_count, "data2": data2, "data3": data3, "data5": data5,
+                   "data5": data6})
 
 
 def about(request):
-    about = about_us.objects.all()
-    return render(request, 'user/about.html', {"about": about})
+    about_data = about_us.objects.all()
+    return render(request, 'user/about.html', {"about": about_data})
 
 
 def service(request):

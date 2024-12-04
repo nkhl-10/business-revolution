@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21e924f3-c05a-4af1-8007-ec90cb7d1e28" name="Changes" comment="fix document">
+      <change afterPath="$PROJECT_DIR$/static/user/img/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/innovator/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/innovator/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/innovator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/innovator/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/innovator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/innovator/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/innovator/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/innovator/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/innovator/uploads.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/innovator/uploads.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/feature.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/feature.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/idea1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/idea1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/testimonial.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/testimonial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weebserver/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/weebserver/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +32,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
-    "last_opened_file_path": "G:/django/business revolution/manage.py",
+    "last_opened_file_path": "G:/django/business revolution/static/user/img",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\django\business revolution\static\user\img" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="runServer" type="PythonConfigurationType" factoryName="Python">
       <module name="business_revolution" />
