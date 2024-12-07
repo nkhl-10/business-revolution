@@ -222,8 +222,7 @@ def order_payment(request):
         razorpay_order = client.order.create(
             {"amount": int(amount) * 100, "currency": "INR", "payment_capture": "1"}
         )
-        order = Order.objects.create(
-            name=name, amount=amount, provider_order_id=razorpay_order["id"]
+        order = Order.objects.create( name=name, amount=amount, provider_order_id=razorpay_order["id"]
         )
         order.save()
         return render(
