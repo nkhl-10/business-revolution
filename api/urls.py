@@ -18,4 +18,8 @@ urlpatterns = [
     path('idea/update/<int:id>', views.updateIdea),
     path('idea/delete/<int:id>', views.deleteIdea),
 
+    path('category', views.categoryHandle),
+    path('category/<int:id>', views.categoryHandle),
+
+
 ]
